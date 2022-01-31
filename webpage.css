@@ -1,0 +1,76 @@
+p{
+	 text-align: center;
+	 font-family: "Lucida Handwriting",cursive;
+	 font-size: 20px;
+	 padding-top:10px;
+}
+footer{
+	font-family: Helvetica,Sans-serif;
+	 font-size: 15px;
+	 text-align: center;
+	 padding-top: 370px;
+}
+h1{
+ text-align: center;
+}
+
+/*body{
+	background-image: url("images/shan.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}*/
+/*#una{
+
+}
+#pangalawa{
+	background-color: #189AB4;
+}
+#pangatlo{
+	background-color: #B9B7BD;
+}
+#pang-apat{
+	 background-color: #2FF3E0;
+}
+#panglima{
+	 background-color: #F8D210;
+}*/
+
+.color-babyblue {
+  background-color: #D4F1F4;
+}
+.color-bluegrotto {
+  background-color: #189AB4;
+}
+.color-pewter {
+  background-color: #B9B7BD;
+}
+.color-cyan {
+  background-color: #2FF3E0;
+}
+.color-gold {
+   background-color: #F8D210;
+}
+
+div{
+	padding-top: 200px;
+ 	justify-content: center;
+ 	padding-bottom: 200px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+
+.banner_holderImage{
+    height: 100%;
+    position:relative;
+    background:   url("images/shan1.png")no-repeat;
+   	background-size: contain;
+    background-position: center;
+}

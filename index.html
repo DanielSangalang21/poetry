@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="webpage.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	<div class="panel" data-color="white" id=title>
+		<h1>"Walang Pamagat"</h1>
+	<div>
+	<div class="panel" id="una" data-color="babyblue">
+		<p>Bobo, tanga at gago mga salitang madalas marinig sa kanya</p>
+		<p>Mga salitang sumasalamin sa kasalukuyang nararamdaman nya</p>
+		<p>Mga nararamdamang mula sa pagkamuhi sa nakaraan at kasalukuyang nagpapa-isip sa kanya</p>
+		<p>Kailan kaya makakamtan ang kinabukasang para sa kanya</p>
+		<br>
+	</div>
+
+	<div class="panel" id="pangalawa" data-color="bluegrotto">
+		<p>Isa syang dalagang di mo ma-espika</p>
+		<p>Kung di mo kilala ay maiinis ka talaga</p>
+		<p>Ngiting parang niloloko ka pagkat mababakas sa kanyang mga mata</p>
+		<p>Ang nararamdamang dinadaan sa laro at <em>TikTok</em> para di mahalata</p>
+		<br>
+	</div>
+
+	<div class="panel" id="pangatlo" data-color="pewter">
+		<p>Siguro madalas sabihing kulang sa pansin o <em>overacting</em> pa</p>
+		<p>Madalas sabihin ng mga taong di marunong umunawa na ito'y mas malalim pa</p>
+		<p>Subukan mo kayang ilagay ang iyong sarili sa kinalalagyan nya</p>
+		<p>Nang mamulat sa mga nangyari at dulot nito sa mga binibining 'tulad nya</p>
+		<br>
+	</div>
+
+	<div class="panel" id="pang-apat" data-color="cyan">
+		<p>Sa sandaling ikaw ay nakasama ako ay napaligaya pagka't sayo ay madaming kakaiba</p>
+		<p>Ramdam ang pangingilag pagkat ikaw ay may takot na</p>
+      	<!--  to play music -->
+      	<p id="must" onclick="play()"><strong><em>CLICK ME.. what could possibly happen?</em></strong></p>
+	
+		<p>Basta laging tandaan ako'y nandidito, gago man at bihirang gawin ang ganto</p>
+		<p>Madalas man ay maloko, sana pakinggan ng Dyos ang panalangin ko...</p>
+		<br>
+	</div>
+
+	<div class="panel" id="panglima" data-color="gold">
+		<p>
+			<b>
+				Nawa'y ang mga bagay na nagpapalungkot sayo ngayon ang syang maging gabay upang mas maging malakas at matatag ka sa hinaharap...
+				<br>
+				Padayon!
+			</b>
+		</p>
+	</div>
+	<div class="banner_holder">
+		 <div class="banner_holderImage"></div>
+        
+    </div>
+
+	<footer>DCS 2021
+			<!-- <a href="https://www.facebook.com/dandanleilei/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>Facebook</a> -->
+	</footer>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	 function play() {
+	  var audio = new Audio('music/kyusi1.mp3');
+	  audio.volume = 0.2
+	  audio.play();
+	  $("#must").hide();
+	}
+
+
+	$(window).scroll(function() {
+  // selectors
+  var $window = $(window),
+      $body = $('body'),
+      $panel = $('.panel');
+  
+  // Change 33% earlier than scroll position so colour is there when you arrive.
+  var scroll = $window.scrollTop() + ($window.height()/1.98);
+
+/* console.log("scroll ="+scroll+"  windowHeight ="+$window.height()+" $window.scrollTop()" +$window.scrollTop() + "");*/
+  $panel.each(function () {
+    var $this = $(this);
+    
+    // if position is within range of this panel.
+    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+    // Remember we set the scroll to 33% earlier in scroll var.
+    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll - 400) {
+      // Remove all classes on body with color-
+      $body.removeClass(function (index, css) {
+        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+      });
+       
+      // Add class of currently active div
+      $body.addClass('color-' + $(this).data('color'));
+    }
+  });    
+  
+}).scroll();
+</script>
